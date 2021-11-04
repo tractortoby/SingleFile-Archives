@@ -1,0 +1,454 @@
+<!DOCTYPE html> <html class="idtnmnntl idc0_332" style><!--
+ Page saved with SingleFile 
+ url: https://blog.kowalczyk.info/article/de943f80c7924745abf9405f8c7a2c67/levelsio-and-survivorship-bias.html 
+ saved date: Fri Oct 22 2021 11:57:21 GMT+0800 (中国标准时间)
+--><meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<meta name=referrer content=always>
+<link rel=alternate type=application/atom+xml title="RSS 2.0" href=https://blog.kowalczyk.info/atom.xml>
+<link rel=canonical href=https://blog.kowalczyk.info/article/de943f80c7924745abf9405f8c7a2c67/levelsio-and-survivorship-bias.html>
+<meta name=description content="Pieter Levels and survivorship bias">
+<meta name=twitter:card content=summary_large_image>
+<meta name=twitter:site content=@kjk>
+<meta name=twitter:title content="@levelsio and survivorship bias">
+<meta name=twitter:description content="Pieter Levels and survivorship bias">
+<meta name=twitter:creator content=@kjk>
+<meta name=twitter:description content="Pieter Levels and survivorship bias">
+<meta property=og:title content="@levelsio and survivorship bias">
+<meta property=og:type content=article>
+<meta property=og:url content=https://blog.kowalczyk.info/article/de943f80c7924745abf9405f8c7a2c67/levelsio-and-survivorship-bias.html>
+<meta property=og:description content="Pieter Levels and survivorship bias">
+<title>@levelsio and survivorship bias</title>
+<style id=photoShowStyles_pointerNone>body{margin:0px 16px 0px 16px;background:white;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:13pt;line-height:1.5;padding-bottom:2em}h2{letter-spacing:-0.01em;line-height:1.2;font-weight:600;margin-bottom:4pt}h2{font-size:1.5rem;margin-top:1.5rem}div#post{min-width:400px;max-width:960px;margin-left:auto;margin-right:auto;margin-top:1em}.title,.title:visited{color:#000;font-weight:bold;text-decoration:none;font-size:140%}a{color:#0894f1;background:transparent}a:hover{color:#044978}.taglink{color:gray;text-decoration:none}a.taglink:hover{text-decoration:underline}.article-meta{display:flex;flex-direction:row;align-items:center;padding-top:1em;color:gray;font-size:0.7em}.article-meta>div{flex:1 0 0}.article-meta>div:nth-child(2){text-align:center;font-size:1.1em;flex-grow:0;flex-shrink:1}.article-meta>div:nth-child(3){text-align:right}div.indented{margin-left:1em}div#post div{min-height:1em;margin-block-start:0}.edit-link{color:white}.edit-link:hover{color:#0894f1}*:before,*:after{pointer-events:none!important}</style><link type=image/x-icon rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD///8A////AP///wD///8A9vz9B7Lt/Utu3v6OStf+skjW/rVo3f6UrOz+UPT7/Qn///8A////AP///wD///8A////AP///wD8/f4Asu3+SiTO/toAx/79AMj//wDI//8Aoc3/AIar/wDA9f0gzf7druz+TdbW1iaoqKhV1tbWJv///wD8/f0AjuX+bwTH/voAyP//AMj//wDI//8AyP//AFRr/wAEBf8AseL/AMj//wS/8/oUJSrpFBQU6uDg4B3///8Aruz+TQTH/voAyP//AMj//wDI//8AyP//AMj//wBUa/8ABAX/ALHi/wDI//8AX3n/AAAA/3iTm4T///8A8vv9ChpGUuMAWXH/AMj//wDI//8Awvj/AEtf/wA8Tf8ASV3/AAAB/wCCpv8An8v/AAME/wA6S/8cyvvg8vv9CqTq/lkAERb9ADA+/wDI//8AyP//AG2L/wAAAf8Aa4j/AFRr/wAAAP8ADhL/ACAq/wANEf8Ard3/AMf+/aTq/llc2v6gABEW/wAsOP8Ax/7/AKjW/wAKDf8AKzf/AML3/wBUa/8AAgL/ABEW/wAAAP8AcI//AMj//wDI//9e2/6fONP+xQARFv8AAwT/AIyz/wAyQP8ABwn/AKDN/wDI//8AVGv/AAQF/wCIrv8ABgj/AEdb/wDG/f8AyP//PNP+wTbS/scAERb/AAAA/wAFBv8AAAD/AGSA/wDI//8AyP//AFRr/wAEBf8AseL/AHKR/wAAAP8AfJ7/AMj//zrT/sJW2f6oABEW/wAhK/8AGiH/AAgK/wC05v8AyP//AMj//wBUa/8ABAX/ALHi/wDG/P8APU7/AA0R/wCo1v9Y2v6mmuj+YwARFv0AMD7/AJfB/wADBP8ATmT/AMb9/wDI//8AY3//AB4m/wC05v8AyP//ALTm/wAoM/8AR1r9mub7Y+r5/RIMExXyADA+/wDI//8AZH//AAIC/wCDqP8AyP//AMj//wDI//8AyP//AMj//wDI//8AyP//Esr+6ur5/RL///8AFhYW6AAwPv8AyP//AMP5/wA0Qv8ADxP/AK3d/wDI//8AyP//AMj//wDI//8AyP//AMf+/Zbn/mX///8A////AIyMjHFYkJ+mAMf+/QDI//8AsOH/AGaC/wCPt/8AyP//AMj//wDI//8AyP//AMj+/W7e/o76/f0B////AP///wD///8A+v39AZbn/mcQyv7tAMf+/QDI//8AyP//AMj//wDI//8Ax/7/Dsr+7pDm/mv6/f0D////AP///wD///8A////AP///wD///8A5vj9FZDm/mtM1/6xKtD+0yjP/tVG1v62jOX+ceT4/Rj///8A////AP///wD///8A/D8AAPAPAADgAQAAwAEAAIABAACAAQAAAAAAAAAAAAAAAAAAAAAAAIABAACAAQAAgAMAAMADAADwDwAA/D8AAA=="><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"></head>
+<body>
+ <div id=content>
+ <div id=post>
+ <div class=title>
+ <a href=https://blog.kowalczyk.info/>Home</a> / @levelsio and survivorship bias
+ 
+ <a class=edit-link href=https://notion.so/de943f80c7924745abf9405f8c7a2c67 rel=nofollow target=_blank>edit</a>
+ 
+ </div>
+ <div id=ad-software-2 class=sf-hidden>
+ 
+ </div>
+ 
+ <div>
+ <p></p>
+<div class=notion-page id=de943f80-c792-4745-abf9-405f8c7a2c67>
+ <div id=609961a1-7560-4296-b604-a08ea8cd06a3>Pieter Levels is a prolific maker of software. He's also very successful maker of software: he's close to making $3 million a year, almost all of it profit and all of it is his profit as he has no employees. A truly solo business.
+ </div>
+ <div id=8dfc20bd-aefd-4554-9b74-7428d57ccbec>This level of success <a href="https://news.ycombinator.com/item?id=28873956">attracts attention</a>
+ </div>
+ <div id=e08f5439-64cc-4f22-9dd1-233a01c4f4d3>It also attracts inevitable claims of survivorship bias. The gist of it is: you wouldn't have the same level of success if you did things that he did.
+ </div>
+ <div id=9ec84a05-7784-4d79-acbf-f72bf6ed4744>I think it's a very defeatist attitude. Life is hard, there are is to step-by-step guide to $3 million a year business but you can do things right or you can do them badly.
+ </div>
+ <div id=a53469d3-f4dc-4b07-a86d-b2624c7e1087>To create a successful business you need to do more things right than badly.
+ </div>
+ <div id=80314497-95a8-49a5-8405-8af87d5679ca>Let's call it <strong>Do Things Right bias</strong>.
+ </div>
+ <div id=8f72a20d-c94d-43cd-90f3-e2af45d98e8f>Let's dissect Peter Level's journey to see what he did right and how that differed from doing things badly.
+ </div>
+ <div id=207dabed-8eab-4dc9-bc78-93bbef6a531c>I've been following Pieter for a long time and he created a large body of tweets and blog posts, a book, a few youtube talks, most of it related to his journey from making $0 a year to $3 million a year.
+ </div>
+ <div id=f3b78b55-1250-4621-9608-fc88a19388e3>People say you can learn from other's people mistakes. It's even better to learn from other's people successes.
+ </div>
+ <div id=9e57e4b8-9ccc-430c-ba83-6bedd34c063f>What did Pieter do right?
+ </div>
+ <h2 id=e290bb55-2245-4c7b-895b-fbd40f456da7>Pieter ships products
+ </h2>
+ <div id=9ac2df87-7a2f-434b-bf67-d13f6a9d0b08>Here's a <a href=https://levels.io/projects/>list of his projects</a> going back 11 years. Limiting the list to only software products:
+ <div class=indented>
+ <ul id=d3829f57-aeb0-4717-b902-eea50374eb2d class=bulleted-list>
+ <li>2010: Uber clone
+ </li>
+ <li>20112 dating site for college campuses, YouTube network
+ </li>
+ <li>2013: YouTube analytics
+ </li>
+ <li>2014: Slack community for digital nomads, GIF Book, Nomad Jobs, Nomad List 1.0, Go Fucking Do It, Play My Inbox
+ </li>
+ <li>2015: Startup Retreats, Taylor Bot (a Telegram bot), Nomad List 2.0, Remote OK
+ </li>
+ <li>2016: Virtual Reality, Places to Work, learning 3D modelling
+ </li>
+ <li>2017: Nomad List 3.0, Nomad Gear, Mute, Hoodmaps
+ </li>
+ <li>2018: Nomad List FIRE Calculator, MAKE Book, Maker Rank, No More Google
+ </li>
+ <li>2019: Bali Sea Cable, Nomad List 5, How Much Is My Side Project Worth
+ </li>
+ <li>2020: QR Menu Creator, IdeasAI, Remote OK Workers, Airline List, Nomad List Climate Finder
+ </li>
+ <li>2021: Rebase, Inflation Chart, MAKE Book NFT,
+ </li>
+ </ul>
+ </div>
+ </div>
+ <div id=8aa9c788-bb23-4189-a9df-60a8a8220b39>you can see him <a href=https://levels.io/hoodmaps/>building a product from first line of code to frontpage of Reddit</a>
+ </div>
+ <div id=6f783ee7-6279-4c2a-b013-a061532dc18a><strong>Doing it badly</strong>
+ </div>
+ <div id=de1fc0a3-04ce-4a42-bd2c-439ee43fff9e>Not shipping products. Commenting on Hacker News how you couldn't possibly take away your precious time commenting on Hacker News and write some code instead.
+ </div>
+ <h2 id=8dedfb17-703e-4f0e-a6bb-4bbd3bb6665f>Pieter is persistent
+ </h2>
+ <div id=a408c407-f243-4ab2-a2ce-0b7b8d4480f2>He's clearly persistent. His overnight success was 11 years in the making. A lot of his projects failed but he didn't give up. He kept making more. He even creates new things even when he doesn't have to because Nomad List and RemoteOk bring more money that he needs.
+ </div>
+ <div id=f13c3271-4af6-44b3-b1ed-1f6e635de9c5><strong>Doing it badly</strong>
+ </div>
+ <div id=0bd62edd-1d2e-4d0b-b420-b4289a903d4b>Abandoning all work after first failure and using survivorship bias as a convenient excuse.
+ </div>
+ <h2 id=539538dc-3bc3-460f-abdb-219779b44cba>Pieter understands compund interest
+ </h2>
+ <div id=35408d72-28e5-4845-99c5-457633db37f8>If you have a profitable business, there are 2 ways to make even more money:
+ <div class=indented>
+ <ul id=c45a8f36-1bbe-4f13-9556-d3f4b5153d9e class=bulleted-list>
+ <li>start a new business
+ </li>
+ <li>sell more stuff to your existing customers
+ </li>
+ </ul>
+ </div>
+ </div>
+ <div id=ee4fa213-6c9c-4909-8c1f-53f0caf7c794>The second option tends to be easier and more reliable way to increate revenue and profits.
+ </div>
+ <div id=a3788cc7-7148-4ae7-85f6-6540cd1d6d00>The hardest thing in business is getting attention of potential customers. It's much easier to get attention of customers you already have.
+ </div>
+ <div id=d29fea24-68ed-4bc3-b05a-07bff7be5eb0>While Pieter keeps doing different project, he's smart enough to do things related to hist most successful business: Nomad List.
+ </div>
+ <div id=9513181a-b4bb-409f-9237-f295cb30b941>He keeps improving Nomad List, he build a jobs website for remote workers and does other related projects like Nomad List Climate Finder.
+ </div>
+ <div id=ff92132b-a9f2-4811-b1e8-9f1e7f79656c>This is similar to the magic of compounded interest in investing.
+ </div>
+ <div id=5d31be83-2a1e-4a37-8a3b-d01f4e188df0><strong>Doing it badly</strong>
+ </div>
+ <div id=2561e1ef-43e5-4f50-88ea-ece4e0ec93a9>Not doubling down on things that work. Chasing distractions.
+ </div>
+ <h2 id=a807f967-559c-4504-86ea-ba74d0b4a70f>Pieter abandons projects that are not working
+ </h2>
+ <div id=eca8dc6d-f4b9-429b-91f3-e205daf38980>You need to be persistent, but in a smart way.
+ </div>
+ <div id=2daadc42-f0a9-49d8-aef4-f3b18f4ce9f7>You'll know when you have a product market fit.
+ </div>
+ <div id=362638bb-2092-48ad-8720-6981924c26e6>Nomad List started as a Google Spreadsheets that Pieter created for himself and accidently left unprotected. Within days people were adding more information to it. That was a clear sign of interest so he turned into a website.
+ </div>
+ <div id=208054c3-2391-4acd-b654-c94abebc4814>All projects start as weakling babies that need to be initially nurtured to health. But if they never manage to get up on their feet, you have to throw them in the river.
+ </div>
+ <div id=07bf306b-eabc-4b5d-bd13-e451f1252864>Ok, that was exceedingly bad analogy.
+ </div>
+ <div id=78cbd954-850c-456b-a432-64d4a12e4395><strong>Doing it badly</strong>
+ </div>
+ <div id=d5803365-5fec-4381-9550-07b5e7ff490d>Sticking with a product that doesn't perform instead of creating a new project that just might.
+ </div>
+ <h2 id=9d5782b0-f606-4ef8-bfc9-76b924441e7c>Pieter chargers money
+ </h2>
+ <div id=1ed66392-103c-44c8-85d1-792d415ea9fc>Freemium is a popular tactic for getting users and many people find it psychologically hard to charge for software.
+ </div>
+ <div id=89bd6022-1b20-41e6-ae83-ccbb8e9a054c>Not Pieter. He asks for money early and he asks for a lot. <a href=https://makebook.io/>His book</a> is $49 (and I bought it). Nomad List is $199.
+ </div>
+ <div id=acbaef87-9d93-428b-bb92-2a50f6beb71e><a href=https://levels.io/idea-validation/>The only real validation is people paying for your product</a>
+ </div>
+ <div id=fe0643ce-98fd-4418-a2f8-6da0ae902e6c><strong>Doing it badly</strong>
+ </div>
+ <div id=a3b2dffa-5aaa-4c1d-926d-e5e917828929>Not charging at all, not charging early enough, not charging enough.
+ </div>
+ <h2 id=06995e82-ca44-4efa-a495-d6ddb25f6d61>Pieter ships quickly
+ </h2>
+ <div id=8b3b4705-2c5f-4882-b674-1a829d24d4ee>NomadList started as a Google Docs Spreadsheet.
+ </div>
+ <div id=6fd14d17-f3c8-47bd-acae-68eb7ebe7469>Pieter turned it into a simple website and made that simple website available immediately. He then kept working on it, improving it.
+ </div>
+ <div id=dd79edba-ae24-44ce-b375-7bbb2b21551e>This is true of all his projects. Ship the smallest thing that provides value, promote it, double-down on things that are working.
+ </div>
+ <div id=afcc95a0-61a8-48db-b228-19bf49c5fafc><strong>Doing it badly</strong>
+ </div>
+ <div id=75972e10-923d-4cec-869a-de4d1329dd4f>Spending a year writing that web app without showing it to anyone.
+ </div>
+ <h2 id=8b86ba27-c562-4120-9074-350c910de327>Pieter does a lot of marketing and promotion
+ </h2>
+ <div id=8a6a5329-a8a3-4b4a-9f11-8d0f7bf0de2f>From early days he was promoting his stuff on his blog, Hacker News, Product Hunt, Reddit, Twitter etc.
+ </div>
+ <div id=cfcf3275-8e95-473b-ad2c-048eb36ce4e4>There's a thin line between promotion and spamming. Don't cross it.
+ </div>
+ <div id=ab168ee6-c523-4080-bf86-0a52375405eb>But most people, especially people good at programming, completely neglect promotion and marketing.
+ </div>
+ <div id=14917346-b201-4520-b86d-f51fbc9910fd>Some say that you should spend as much time on marketing as you do on coding the product.
+ </div>
+ <div id=d6b3f2d1-12ca-41cb-919a-df800165b3d9>I don't know what the right amount is but it's not zero.
+ </div>
+ <div id=98701648-45d8-4a18-90d3-b49edb3523ba><strong>Doing it badly</strong>
+ </div>
+ <div id=e4d6f4b5-2c0f-49e9-be8a-222493f8bd02>Not spending any time on promotion and marketing.
+ </div>
+ <div id=70ccac72-4894-4d46-aa8b-4382a326f251>Not writing blog posts related to your product. Not tweeting, not trying to promote your writing on Hacker News or reddit or quora.
+ </div>
+ <div id=23a05da6-353a-4709-883b-f6dbf33c2aa0>If a tree falls in the forest and there's no one to see it, write a blog post about it and post it on Hacker News.
+ </div>
+ <h2 id=fc500308-77b3-4733-b023-62a0b7ea6862>Pieter is good at promotion and marketing
+ </h2>
+ <div id=aaf83e72-c7cc-4383-b0fd-992bf1a3a483>I'm not sure if this can be thought but Pieter seems to have a natural gift for story telling and promotion.
+ </div>
+ <div id=f1b9f493-07a1-4279-878a-d9b866610e13>Consider those 2 examples:
+ <div class=indented>
+ <ul id=12fa8694-78fd-4cf2-b9df-4c24a9aaf1c7 class=bulleted-list>
+ <li>2014 <a href=https://levels.io/12-startups-12-months/>I'm launching 12 Startups in 12 Months</a>.
+ <ul id=9c3b025d-2eb2-48d6-a318-f55576287cae class=bulleted-list>
+ <li>"12 startups in 12 months" is a much more interesting story than "I'm starting a startup".
+ </li>
+ <li>This is important because if you submit "I'm starting a startup" blog post to Hacker News, it's unlikely to get traction. But "12 startups in 12 months" - it very well might.
+ </li>
+ <li>People are attracted to new, never-been-done-before.
+ </li>
+ <li>This trope is now over-used so you can't just copy it. But this is a big world and you don't have to be absolutely first and only. Pieter was inspired by <a href=https://jenniferdewalt.com/>180 websites in 180 dasy</a> project.
+ </li>
+ </ul>
+ </li>
+ <li><a href=https://levels.io/100-to-0-things/>How I went from 100 to 0 things</a>.
+ <ul id=fac251a2-8252-45c2-bcff-2a63faeaade3 class=bulleted-list>
+ <li>He was robbed.
+ </li>
+ <li>It happens to many people but most people don't blog about it and promote that blog on Hacker News
+ </li>
+ </ul>
+ </li>
+ </ul>
+ </div>
+ </div>
+ <div id=17232664-c3c2-4867-8874-00fca2189ee7>It's more than a catchy headline, though.
+ </div>
+ <div id=ac069ca0-8273-40ef-84c4-a65ac4b37ae7>The content of those blog posts is good and goes beyond the obvious. Sharing a lousy story will not get
+ </div>
+ <div id=b787a1d8-5624-4bb9-946c-a1e169980ec6><strong>Doing it badly</strong>
+ </div>
+ <div id=93f068c6-cd0c-4b2e-a36e-37253f452f19>Not spending any time on promotion and marketing.
+ </div>
+ <div id=df97b201-c460-46a3-acd3-3dc933276c3f>On the other hand, there are people who simply spam with low-effort, low-quality posts. That is not going to work either.
+ </div>
+ <h2 id=e5f9b833-9f96-475d-abdf-b41092cdb5d8>Pieter is productive
+ </h2>
+ <div id=ad669e41-8928-4fd4-8cf3-5c1a5d2c35a2>The amount of projects he shipped is impressive.
+ </div>
+ <div id=1b484883-a47a-437d-89db-5e77afa2fd45>The depth of some of his projects is impressive.
+ </div>
+ <div id=4b6fb1a0-4e3f-423c-aab4-926a17416981>It's not inhumanely great, though.
+ </div>
+ <div id=851283ba-8ed8-4fa4-b650-5878cf9d5455>When you consider he did it over 10 years, it's more than doable.
+ </div>
+ <div id=afecee1e-9a86-4911-9106-a9e8ff8738fd>The difference between "doable" and "done" is measured in hours spent in front of the monitor, writing code, testing code, learning new things, applying those things.
+ </div>
+ <div id=2a78ac84-9c5d-4bee-9712-e26de48c53c3>Most people just don't spend enough time and / or not spending the time productively.
+ </div>
+ <div id=cfc8add5-ae58-469e-88e9-b78b908edf08>If my plan worked, you're reading this because you spend a lot of time on Hacker News.
+ </div>
+ <div id=fb199d32-2ea6-43d1-940f-9bfa7754657f>I do too but I also took few hours of my life to create this post.
+ </div>
+ <div id=274043a0-b682-4d1e-b414-04affb3a04a5><strong>Doing it badly</strong>
+ </div>
+ <div id=e039881e-c4e5-4b2a-9b78-4c58fb0db718>Writing a book is a time consuming activity.
+ </div>
+ <div id=5716fc8b-bad6-4618-8c70-ac7e0c819a20>Writing software is a time consuming activity.
+ </div>
+ <div id=c46a893f-41fc-4922-b6de-f4e45fbefdec>There's no around spending a lot of time on your business (occasional exception notwithstanding).
+ </div>
+ <h2 id=9766b5fc-8df2-40e6-b598-cb95e3890bbe>Pieter learned programming by himself
+ </h2>
+ <div id=558bd13b-d067-497d-b5e2-002ff2268437>This is not about self-thought programmer vs. one that went to collage. It's about doing what's necessary.
+ </div>
+ <div id=80073861-f1f1-4c54-9d32-24936127021d>He had ideas for software but didn't know how to program. For most people that's an insurmountable problem. It's learned helplessnes.
+ </div>
+ <div id=c2f61758-ce7e-403e-8ae6-38c554df4323>All you need to learn programming is out there, for free. On YouTube, on blogs. You just need to start and keep going.
+ </div>
+ <div id=34deb9bd-e0ff-4e21-934b-b66f13ad9b29>You can <a href=https://levels.io/diy/>read what Pieter says</a> about DYI ethos.
+ </div>
+ <div id=1c3bf984-d756-4ba1-975b-fdadef4e3865><strong>Doing it badly</strong>
+ </div>
+ <div id=d645b8ea-19ee-405e-b1ec-1a962f5da13d>Trying to outsource programming to contractors or someone you find on Upwork, fantasizing about rising VC and hiring programming, trying to find technical cofounder that will do all the work for 10% of the company.
+ </div>
+ <div id=757f6f8b-0e90-4b1d-a9ef-30a6eebf0398>Some people succeed by hiring programmers or contractors.
+ </div>
+ <div id=d0564421-13ee-4d6a-a3c0-17e8c0406ef3>Most people don't because most people suck at managing programmers even more than Winklevoss brothers.
+ </div>
+ <div id=59d14ee7-dbb2-4ed5-a499-3dc409ea85c2>If you are a broke college student, you just don't have the money to hire people.
+ </div>
+ <h2 id=00114cb9-b6d3-4489-a4ea-b72545ef953b>Pieter copies best practices
+ </h2>
+ <div id=584f6bc8-cd82-4ef5-ae78-7ad67e7afec1>We are not born being the best programmers, best marketers, best writers.
+ </div>
+ <div id=8d422c88-d11c-4a46-82df-48021e132847>There is no step-by-step guide to becoming the person that creates great products and markets them well.
+ </div>
+ <div id=3cba0eb5-d021-4bd1-8dfe-953f72509a79>But there are many businesses that do things well. You can deconstruct what they do well and copy it. It requires an attentive, inquisitive mind.
+ </div>
+ <div id=bbb2cedf-46b3-4f5f-8365-1c34b6792880>Let's take <a href=https://makebook.io/>https://makebook.io/</a> as an example. Do you see what Pieter did well there?
+ </div>
+ <div id=433fad43-5ae1-487f-82b4-f48405c1db07>Go ahead, look some more. What did he do well on that website?
+ </div>
+ <div id=680c49f3-41de-451b-ae4a-02db4d00f51b>Answer: social proof.
+ </div>
+ <div id=34e92854-676b-4505-9a67-3273ff104991>At the top: "Product Hunt's Book of the year". At the bottom: twitter testimonials of people fawning over his book.
+ </div>
+ <div id=5dc6ee14-b2fb-473d-b5f3-e707a05534c5>Does your business use social proof to make people more likely to buy?
+ </div>
+ <div id=fb24402e-7dfe-4d10-bbee-8d32c76e73ad>This is just one of many things that a business can do well.
+ </div>
+ <div id=6c16cc9b-a165-4fee-b6b9-2b044fbb09fb>For another example: go to <a href=https://nomadlist.com/>https://nomadlist.com/</a> and try to sign up for Nomad List.
+ </div>
+ <div id=a817461e-5620-4854-82b0-4f92120abf77>It's a master class in how to convert a visitor into a customer. Figuring it why it makes for a great conversion funnel is left as an exercise for the reader.
+ </div>
+ <div id=915b0c9e-8f65-4147-8dd0-90c0108e25f0><strong>Doing it badly</strong>
+ </div>
+ <div id=686595e1-78c2-4a66-8755-66267eb6920e>Stagnating.
+ </div>
+ <div id=3a53e0d7-f8ca-4a98-8ebd-058ebc99be5e>Never asking yourself: how can I do X better? How can I make my business better?
+ </div>
+ <div id=e4183043-317e-4f54-a321-04a4b5357c35>Not noticing the best practices that other businesses use.
+ </div>
+ <div id=2fbe3583-ba5b-4fb9-9642-8298959b5c38>Not copying their best practices.
+ </div>
+ <div id=9119a814-cb15-4b38-8664-5c3392b1fdfe>Not learning from blogs, books, tweet storms.
+ </div>
+ <div id=9b117ea9-0eb8-409e-9eab-ebcb21abd4f4>Not applying the things you learn to your business.
+ </div>
+ <h2 id=f1524ec2-fe42-47d2-85ca-a5b6b8b53b30>Pieter is not a technologist
+ </h2>
+ <div id=a6b74164-79ae-4e94-a338-ad8d020dfb3c>It's counter-intuitive that not being a technologist i.e. someone impressed by and interested in new technologies, can be an advantage when running a business.
+ </div>
+ <div id=649a71c3-2622-4fd4-b325-736390f21ceb>He build his $3 million/year empire on PHP, sqlite, and a single VPS server.
+ </div>
+ <div id=0d2150d7-c463-42b2-a469-2d956c74ea9b>Those are not technologies that will impress anyone. PHP is 27 years old. It might be older than you. It sure isn't Rust or Swift.
+ </div>
+ <div id=bd431c20-d29d-43b4-adf9-02b678c3423b>SQLite is 21 years old and everyone knows that a serious web service needs to use a serious database, like PostgreSQL
+ </div>
+ <div id=24a33cd9-02e9-49a6-b91d-a70903d52c59>But they get things done. More precisely: Pieter gets things done using them.
+ </div>
+ <div id=df85647b-3c84-4bf8-a8a8-c3ce0ed97d8e><strong>Doing it badly</strong>: I'm a technologies so trust me, I know the siren song of fancy new languages, Kubernetes clusters, latest web framework.
+ </div>
+ <div id=7b044d60-e0af-4936-b8a8-8ad5291c1b92>I'm doing it badly. I'm trying to do it less badly.
+ </div>
+ <div id=2c203818-c696-43ca-86e0-1c61b0a14dc7>When it comes to being productive, using a mature tool that you know well beats chasing the latest thing.
+ </div>
+ <div id=86945e3d-950e-4fb3-9614-43b1c5d215d8>For me it's Go on the backend and Svelte on the front-end but as Pieter shows, you can be very prolific with a very old technology.
+ </div>
+ <h2 id=d29514a0-d4df-495c-bdd3-74b0be3cd15f>Pieter surfs the high waves
+ </h2>
+ <div id=53f28297-6cf7-4f64-b2f8-d7af25e3dfb7>YouTube analytics in 2013. Slack channel in 2014. Virtual Reality in 2016. Telegram bot in 2015. Being a nomad in 2015. QR Menu creator in 2020. Bitcoin / NFT in 2021.
+ </div>
+ <div id=57614fa4-b259-473f-ad8d-bbb609ffc5ed>The guy is at the forefront of trends.
+ </div>
+ <div id=3f23db0d-95c0-4ca0-a7c8-5ecaad3fb145>This doesn't necessarily make or break his businesses but I'm sure it's easier to promote novel things.
+ </div>
+ <div id=b18e0ed3-1598-484b-a55a-88442169137e>This is not blind chasing of fads.
+ </div>
+ <div id=2a80f036-c614-4f59-a399-693a7f0f3feb>He doesn't have a podcast, a TikTok, or hangs out on Clubhouse.
+ </div>
+ <div id=1bb96e4b-2461-47da-9015-b51980b728db>He did nomadic lifestyle years before it was a trend.
+ </div>
+ <div id=32391171-7357-4136-a918-e6e5c2ad7b80>Don't ignore trends but do apply your personal and busines filter.
+ </div>
+ <div id=62676d39-0100-48ea-bc9d-f3ffbbe34114>It's also different than being a technologist.
+ </div>
+ <div id=7bcc0fbc-72a5-481c-8024-6e7b34480de4>He didn't rewrite his website on blockchain but he did notice that Bitcoin is a trendy thing and he did a project that is related to Bitcoin and provides value related to Bitcoin.
+ </div>
+ <div id=d2c2151b-46b5-4dfc-b77d-8f75db2da391><strong>Doing it badly</strong>. If you a late adopter then it's probably a character trait that you can't do much about.
+ </div>
+ <div id=75324271-e981-423a-8069-682ee7ddbc62>Some people are early adopters, some are majority and some are laggards.
+ </div>
+ <div id=65d02d67-f584-45ac-b484-f2d2cb8ae6ef>If you're early adopter you still might not see how to put the new thing to good use.
+ </div>
+ <h2 id=fe7bcc33-5b55-4651-8ac2-bbcf980132b2>Pieter is humble
+ </h2>
+ <div id=d16b7db0-b7f1-4d56-a650-818b37c242bc>The first thing he said in <a href="https://news.ycombinator.com/item?id=28874985">this comment</a>: "All of this is possible because I've been a HN reader since 2010 and was inspired by all of you and especially @patio11 on here to bootstrap my own things and do it VERY publicly."
+ </div>
+ <div id=87840d59-36e1-4e1f-a44d-3a076981e921>This might not impact his business but it does impact how people perceive him.
+ </div>
+ <div id=005d6f80-34ae-44da-a7a4-3d1890c13891><strong>Doing it badly</strong>
+ </div>
+ <div id=44031749-c339-4be4-9bcc-43bc15907b3e>Being an arrogant prick that people dislike and root against.
+ </div>
+ <h2 id=367c7367-b62d-459a-acee-2edd6e83962f>Doing Things Right bias
+ </h2>
+ <div id=eb275198-a8ed-486b-9a15-17fb397be389>Survivorship bias is for losers.
+ </div>
+ <div id=356250e0-c385-45f3-93fd-b5fc41b392fc>Doing Things Right bias is for winners.
+ </div>
+ <div id=b120a30b-b660-4ebf-9f56-eb1356bb1ad2>So put that coffee down until you start <strong>Doing Things Right</strong>.
+ </div>
+ <h2 id=307a6b23-c36e-42a4-ac5a-df0ef57f75ed>Learning from Pieter
+ </h2>
+ <div id=3cfbd387-0972-4acc-ad88-081755b97338>Do you want to create successful projects? You can learn a lot from Pieter:
+ <div class=indented>
+ <ul id=5313e498-786c-46ae-b1e7-008aee2a3d56 class=bulleted-list>
+ <li>watch his <a href="https://www.youtube.com/watch?v=6reLWfFNer0">How to build a startup without funding</a> talk
+ </li>
+ <li>read his <a href=https://levels.io/>blog posts</a>
+ </li>
+ <li>read <a href=https://makebook.io/>his book</a>
+ </li>
+ <li>watch <a href=https://levels.io/ama/>4 hour AMA</a>
+ </li>
+ <li>listen to <a href=https://levels.io/product-hunt-radio/>an interview he gave</a>
+ </li>
+ </ul>
+ </div>
+ </div>
+ <div id=7c0d0cf3-a793-4343-b9b4-5ee5a714f100>Don't just read it passively.
+ </div>
+ <div id=65bd9831-b36e-4f85-bae9-3a4af494c0b8>You're a business detective. He has a successful business. Your job is to figure out all the things he did right, not just the things he's telling you.
+ </div>
+ <div id=6bd8b30a-c22d-4dc4-b09f-b6669decbcd3>You need to figure out that he's using social proof even if he never talks about using social proof.
+ </div>
+</div>
+ </div>
+ <div class=article-meta>
+ <div>
+ 
+ 
+ Written on Oct 20 2021.
+ 
+ Topics: <a href=https://blog.kowalczyk.info/tag/business class=taglink>business</a>.
+ 
+ 
+ 
+ </div>
+ <div>
+ 
+ 
+ <a href=https://blog.kowalczyk.info/>home</a>
+ 
+ 
+ </div>
+ <div>
+ Found a mistake, have a comment?
+ <a href=#>Let me know</a>.
+ </div>
+ </div>
+ <form name=blog-article-feedback netlify id=contact-form class=sf-hidden>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </form>
+ <p></p>
+ 
+ </div>
+ </div>
+ <div id=ad-software class=sf-hidden>
+ Need fast, offline access to 190+ programmer API docs? Try my app 
+ </div>
+ 
+<tbdiv id=picinpicBtn class=sf-hidden></tbdiv><tbdiv id=playerControlBtn class=sf-hidden></tbdiv><tbdiv id=leftFullStackButton class=sf-hidden></tbdiv><tbdiv id=rightFullStackButton class=sf-hidden></tbdiv><div id=photoShowViewer class="sb_BingCA photoShow">
+ <div class=photoshow-viewer-shadow></div>
+ <div class="photoshow-img-wrapper sf-hidden">
+ 
+ 
+ </div>
+ <i class=photoshow-img-size></i>
+ </div>
