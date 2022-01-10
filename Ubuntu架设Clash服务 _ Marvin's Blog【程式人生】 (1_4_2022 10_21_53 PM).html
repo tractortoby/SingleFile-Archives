@@ -1,0 +1,284 @@
+<!DOCTYPE html> <html dir=auto class="jrvol idc0_335" style lang=en><!--
+ Page saved with SingleFile 
+ url: https://marvinsblog.net/post/2021-07-06-clash-server-ubuntu/ 
+ saved date: Tue Jan 04 2022 22:21:53 GMT+0800 (China Standard Time)
+--><meta charset=utf-8>
+<meta http-equiv=X-UA-Compatible content="IE=edge">
+<meta name=viewport content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name=robots content="index, follow">
+<title>Ubuntu架设Clash服务 | Marvin's Blog【程式人生】</title>
+<meta name=keywords content="Clash, Ubuntu 20.04">
+<meta name=description content=目标操作系统：Ubuntu20.04。>
+<meta name=author content>
+<link rel=canonical href=https://marvinsblog.net/post/2021-07-06-clash-server-ubuntu/>
+<style>.footer,.top-link{font-size:12px;color:var(--secondary)}.footer{max-width:calc(var(--main-width) + var(--gap) * 2);margin:auto;padding:calc((var(--footer-height) - var(--gap))/2)var(--gap);text-align:center;line-height:24px}.footer span{margin-inline-start:1px;margin-inline-end:1px}.footer a{color:inherit;border-bottom:1px solid var(--secondary)}.footer a:hover{border-bottom:1px solid var(--primary)}.top-link{position:fixed;bottom:60px;right:30px;z-index:99;background:var(--tertiary);width:42px;height:42px;padding:12px;border-radius:64px;transition:visibility .5s,opacity .8s linear}.top-link,.top-link svg{filter:drop-shadow(0 0 0 var(--theme))}.footer a:hover,.top-link:hover{color:var(--primary)}.top-link:focus,#theme-toggle:focus{outline:0}.nav{display:flex;flex-wrap:wrap;justify-content:space-between;max-width:calc(var(--nav-width) + var(--gap) * 2);margin-inline-start:auto;margin-inline-end:auto;line-height:var(--header-height)}.nav a{display:block}.logo,#menu{display:flex;margin:auto var(--gap)}.logo{flex-wrap:inherit}.logo a{font-size:24px;font-weight:700}#theme-toggle svg{height:18px}button#theme-toggle{font-size:26px;margin:auto 4px}body:not(.dark) #sun{display:none}#menu{list-style:none;word-break:keep-all;overflow-x:auto;white-space:nowrap}#menu li+li{margin-inline-start:var(--gap)}#menu a{font-size:16px}.logo-switches{display:inline-flex;margin:auto 4px}.logo-switches{flex-wrap:inherit}.main{position:relative;min-height:calc(100vh - var(--header-height) - var(--footer-height));max-width:calc(var(--main-width) + var(--gap) * 2);margin:auto;padding:var(--gap)}code{direction:ltr}.post-header{margin:24px auto var(--content-gap)}.post-title{margin-bottom:2px;font-size:40px}.post-meta{color:var(--secondary);font-size:14px;display:flex;flex-wrap:wrap}.post-content{color:var(--content)}.post-content h3{margin:24px 0 16px}.post-content h2{margin:32px auto 24px;font-size:32px}.post-content h3{font-size:24px}.post-content a,.toc a:hover{box-shadow:0 1px}.post-content p,.post-content ul{margin-bottom:var(--content-gap)}.post-content ul{padding-inline-start:20px}.post-content li{margin-top:5px}.post-content .highlight:not(table),.post-content pre{margin:10px auto;background:var(--hljs-bg)!important;border-radius:var(--radius)}.post-content .highlight pre{margin:0}.post-content code{margin:auto 4px;padding:4px 6px;font-family:Menlo,Monaco,courier new,Courier,monospace;font-size:.78em;line-height:1.5;background:var(--code-bg);border-radius:2px}.post-content pre code{display:block;margin:auto 0;padding:10px;color:rgba(255,255,255,.8);background:0 0;border-radius:0;overflow-x:auto;word-break:break-all}.post-content blockquote{margin:20px 0;padding:0 14px;border-inline-start:3px solid var(--primary)}.toc{margin:0 2px 40px;border:1px solid var(--border);background:var(--code-bg);border-radius:var(--radius);padding:.4em}.toc details summary{cursor:zoom-in;margin-inline-start:20px}.toc .details{display:inline;font-weight:500}.toc .inner{margin:0 20px;padding:10px 20px}.toc li ul{margin-inline-start:var(--gap)}.toc summary:focus{outline:0}.post-footer{margin-top:56px}.post-tags li{display:inline-block;margin-inline-end:3px;margin-bottom:5px}.post-tags a{border-radius:var(--radius);border:1px solid var(--border)}.post-tags a{display:block;padding-inline-start:14px;padding-inline-end:14px;color:var(--secondary);font-size:14px;line-height:34px;background:var(--code-bg)}.post-tags a:hover,.paginav a:hover{background:var(--border)}.post-content :not(table) ::-webkit-scrollbar-thumb{border:2px solid var(--hljs-bg);background:rgba(255,255,255,.32)}*,::after,::before{box-sizing:border-box}html{-webkit-tap-highlight-color:transparent;overflow-y:scroll}a,button,body,h1,h2,h3{color:var(--primary)}body{font-family:-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;font-size:18px;line-height:1.6;word-break:break-word;background:var(--theme)}article,footer,header,main{display:block}h1,h2,h3{line-height:1.2}h1,h2,h3,p{margin-top:0;margin-bottom:0}ul{padding:0}a{text-decoration:none}body,ul{margin:0}button{padding:0;font:inherit;background:0 0;border:0}button{cursor:pointer}::-webkit-scrollbar-track{background:0 0}::-webkit-scrollbar-thumb{background:var(--tertiary);border:5px solid var(--theme);border-radius:var(--radius)}:root{--gap:24px;--content-gap:20px;--nav-width:1024px;--main-width:720px;--header-height:60px;--footer-height:60px;--radius:8px;--theme:#fff;--entry:#fff;--primary:rgba(0,0,0,0.88);--secondary:rgba(0,0,0,0.56);--tertiary:rgba(0,0,0,0.16);--content:rgba(0,0,0,0.88);--hljs-bg:#1c1d21;--code-bg:#f5f5f5;--border:#eee}@media screen and (max-width:768px){:root{--gap:14px}}@media screen and (min-width:768px){::-webkit-scrollbar{width:19px;height:11px}}@media (prefers-reduced-motion){.top-link{transform:none}}</style>
+<link rel=icon type=image/png sizes=16x16 href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+<link rel=icon type=image/png sizes=32x32 href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+<link rel=apple-touch-icon href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+<link rel=mask-icon href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+<meta name=theme-color content=#2e2e33>
+<meta name=msapplication-TileColor content=#2e2e33>
+<meta name=generator content="Hugo 0.89.4">
+<meta property=og:title content=Ubuntu架设Clash服务>
+<meta property=og:description content=目标操作系统：Ubuntu20.04。>
+<meta property=og:type content=article>
+<meta property=og:url content=https://marvinsblog.net/post/2021-07-06-clash-server-ubuntu/><meta property=article:section content=posts>
+<meta property=article:published_time content=2021-07-06T19:52:27+08:00>
+<meta property=article:modified_time content=2021-07-06T19:52:27+08:00>
+<meta name=twitter:card content=summary>
+<meta name=twitter:title content=Ubuntu架设Clash服务>
+<meta name=twitter:description content=目标操作系统：Ubuntu20.04。>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://marvinsblog.net/posts/"},{"@type":"ListItem","position":2,"name":"","item":"https://marvinsblog.net/posts/2021/"},{"@type":"ListItem","position":3,"name":"Ubuntu架设Clash服务","item":"https://marvinsblog.net/post/2021-07-06-clash-server-ubuntu/"}]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ubuntu架设Clash服务","name":"Ubuntu架设Clash服务","description":"目标操作系统：Ubuntu20.04。\n","keywords":["Clash","Ubuntu 20.04"],"articleBody":"目标操作系统：Ubuntu20.04。\n安装 安装Go Ubuntu20.04默认的Golang版本为1.13。要按照当前最新的1.16.5，如下所示：\nwget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz sudo tar -xvf go1.16.4.linux-amd64.tar.gz sudo mv go /usr/local 在Shell的配置文件中设置以下：\nexport GOROOT=/usr/local/go export GOPATH=$HOME/your/gopath export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 参考\n How To Install Go 1.16 on Ubuntu 20.04  编译Clash 参考https://github.com/Dreamacro/clash/wiki\ngo install github.com/Dreamacro/clash@latest 如果网络不好，可能会失败\n下载Clash 从https://github.com/Dreamacro/clash/releases下载，然后使用gunzip -k解压。\n个人习惯是放到/opt/clash下面\n以systemd服务运行 参考clash as a daemon。设计一个clash.service文件：\n[Unit] Description=Clash daemon, A rule-based proxy in Go. After=network.target [Service] Type=simple Restart=always ExecStart=/usr/local/bin/clash -d /etc/clash [Install] WantedBy=multi-user.target 放置或者链接到/etc/systemd/system/clash.service。\n相关命令：\nsystemctl enable clash systemctl start clash systemctl stop clash systemctl status clash journalctl -xe service clash start service clash stop service clash restart service clash status 查看日志：\njournalctl -e -u clash.service 如果想要将日志单独记录到文件，可以使用 systemd 的 StandardOutput 和 StandardError 将日志定向到文件中:\n# Works only in systemd v240 and newer! StandardOutput=append:/var/log/clash/log.log StandardError=append:/var/log/clash/error.log  参考https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=\n 如果之前运行过clash，那么在~/.config/clash下会生成\n config.yaml Country.mmdb  将这两个文件拷到目前配置目录，比如/etc/clash。\nWebUI 可以使用：\n https://github.com/Dreamacro/clash-dashboard https://github.com/haishanh/yacd  需要在config.xml中设置external-ui到dashboard资源所在路径。\n其他参考  https://lancellc.gitbook.io/clash/ https://github.com/Dreamacro/clash/wiki/configuration 如何在Linux中使用Clash（前提：在Windows中已经连接成功）——保姆级别教程  此文将clash服务放置在/usr/lib/systemd/system/clash.service   在 Linux 上使用 Clash 作代理 https://github.com/Sitoi/SystemdClash Clash-Linux-折腾笔记 Clash自动更新订阅配置 ubuntu安装clash+yacd-gui https://github.com/SpongeNobody/Clashy https://github.com/haishanh/yacd  名词解释 TUN/TAP TUN，即netowrk TUNnel，层3的隧道。 TAP，即network TAP吗，层2的隧道。\n（未完待续）\n2021-07-09更新 Clash的Web界面：\n https://github.com/Dashboard2/Dashboard https://github.com/lzdnico/ClashWeb  （更新完）\n","wordCount":"911","inLanguage":"en","datePublished":"2021-07-06T19:52:27+08:00","dateModified":"2021-07-06T19:52:27+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://marvinsblog.net/post/2021-07-06-clash-server-ubuntu/"},"publisher":{"@type":"Organization","name":"Marvin's Blog【程式人生】","logo":{"@type":"ImageObject","url":"https://marvinsblog.net/favicon.ico"}}}</script>
+<style id=photoShowStyles_pointerNone>*:before,*:after{pointer-events:none!important}</style><link rel=icon href="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><style>.sf-hidden{display:none!important}</style><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:;"></head>
+<body id=top data-new-gr-c-s-check-loaded=8.892.0 data-gr-ext-installed>
+<noscript class=sf-hidden>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+    </style>
+
+</noscript>
+<header class=header>
+ <nav class=nav>
+ <div class=logo>
+ <a href=https://marvinsblog.net/ accesskey=h title="Marvin's Blog【程式人生】 (Alt + H)">Marvin's Blog【程式人生】</a>
+ <span class=logo-switches>
+ <button id=theme-toggle accesskey=t title="(Alt + T)">
+ <svg id=moon xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round>
+ <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+ </svg>
+ <svg id=sun xmlns=http://www.w3.org/2000/svg width=24 height=24 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2 stroke-linecap=round stroke-linejoin=round>
+ <circle cx=12 cy=12 r=5></circle>
+ <line x1=12 y1=1 x2=12 y2=3></line>
+ <line x1=12 y1=21 x2=12 y2=23></line>
+ <line x1=4.22 y1=4.22 x2=5.64 y2=5.64></line>
+ <line x1=18.36 y1=18.36 x2=19.78 y2=19.78></line>
+ <line x1=1 y1=12 x2=3 y2=12></line>
+ <line x1=21 y1=12 x2=23 y2=12></line>
+ <line x1=4.22 y1=19.78 x2=5.64 y2=18.36></line>
+ <line x1=18.36 y1=5.64 x2=19.78 y2=4.22></line>
+ </svg>
+ </button>
+ 
+ 
+ </span>
+ </div>
+ <ul id=menu>
+ <li>
+ <a href=https://marvinsblog.net/ title=Home>
+ <span>Home</span>
+ </a>
+ </li>
+ <li>
+ <a href=https://marvinsblog.net/toolstory/ title=Toolstory>
+ <span>Toolstory</span>
+ </a>
+ </li>
+ <li>
+ <a href=https://marvinsblog.net/topics/ title=Topics>
+ <span>Topics</span>
+ </a>
+ </li>
+ <li>
+ <a href=https://marvinsblog.net/tags/ title=Tags>
+ <span>Tags</span>
+ </a>
+ </li>
+ <li>
+ <a href=https://marvinsblog.net/categories/ title=Categories>
+ <span>Categories</span>
+ </a>
+ </ul>
+ </nav>
+</header>
+ <main class=main>
+<article class=post-single>
+ <header class=post-header>
+ <h1 class=post-title>
+ Ubuntu架设Clash服务
+ </h1>
+ <div class=post-meta>July 6, 2021
+</div>
+ </header> 
+ <div class=toc>
+ <details>
+ <summary accesskey=c title="(Alt + C)">
+ <div class=details>Table of Contents</div>
+ </summary>
+ <div class=inner><ul><li>
+ <a href=#%e5%ae%89%e8%a3%85 aria-label=安装>安装</a><ul>
+ <li>
+ <a href=#%e5%ae%89%e8%a3%85go aria-label=安装Go>安装Go</a><li>
+ <a href=#%e7%bc%96%e8%af%91clash aria-label=编译Clash>编译Clash</a><li>
+ <a href=#%e4%b8%8b%e8%bd%bdclash aria-label=下载Clash>下载Clash</a><li>
+ <a href=#%e4%bb%a5systemd%e6%9c%8d%e5%8a%a1%e8%bf%90%e8%a1%8c aria-label=以systemd服务运行>以systemd服务运行</a></ul>
+ <li>
+ <a href=#webui aria-label=WebUI>WebUI</a><li>
+ <a href=#%e5%85%b6%e4%bb%96%e5%8f%82%e8%80%83 aria-label=其他参考>其他参考</a><li>
+ <a href=#%e5%90%8d%e8%af%8d%e8%a7%a3%e9%87%8a aria-label=名词解释>名词解释</a><ul>
+ <li>
+ <a href=#tuntap aria-label=TUN/TAP></a><a href=https://en.wikipedia.org/wiki/TUN/TAP>TUN/TAP</a></ul>
+ <li>
+ <a href=#2021-07-09%e6%9b%b4%e6%96%b0 aria-label=2021-07-09更新>2021-07-09更新</a></ul>
+ </div>
+ </details>
+ </div>
+ <div class=post-content>
+<p>目标操作系统：Ubuntu20.04。</p>
+<h2 id=安装>安装<a class="anchor sf-hidden" aria-hidden=true href=#%E5%AE%89%E8%A3%85 hidden>#</a></h2>
+<h3 id=安装go>安装Go<a class="anchor sf-hidden" aria-hidden=true href=#%E5%AE%89%E8%A3%85go hidden>#</a></h3>
+<p>Ubuntu20.04默认的Golang版本为1.13。要按照当前最新的1.16.5，如下所示：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget https://dl.google.com/go/go1.16.4.linux-amd64.tar.gz 
+sudo tar -xvf go1.16.4.linux-amd64.tar.gz
+sudo mv go /usr/local
+</code></pre></div><p>在Shell的配置文件中设置以下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export GOROOT=/usr/local/go 
+export GOPATH=$HOME/your/gopath
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH 
+</code></pre></div><p>参考</p>
+<ul>
+<li><a href=https://tecadmin.net/how-to-install-go-on-ubuntu-20-04/>How To Install Go 1.16 on Ubuntu 20.04</a></li>
+</ul>
+<h3 id=编译clash>编译Clash<a class="anchor sf-hidden" aria-hidden=true href=#%E7%BC%96%E8%AF%91clash hidden>#</a></h3>
+<p>参考<a href=https://github.com/Dreamacro/clash/wiki>https://github.com/Dreamacro/clash/wiki</a></p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>go install github.com/Dreamacro/clash@latest
+</code></pre></div><p>如果网络不好，可能会失败</p>
+<h3 id=下载clash>下载Clash<a class="anchor sf-hidden" aria-hidden=true href=#%E4%B8%8B%E8%BD%BDclash hidden>#</a></h3>
+<p>从<a href=https://github.com/Dreamacro/clash/releases>https://github.com/Dreamacro/clash/releases</a>下载，然后使用<code>gunzip -k</code>解压。</p>
+<p>个人习惯是放到<code>/opt/clash</code>下面</p>
+<h3 id=以systemd服务运行>以systemd服务运行<a class="anchor sf-hidden" aria-hidden=true href=#%E4%BB%A5systemd%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%A1%8C hidden>#</a></h3>
+<p>参考<a href=https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon>clash as a daemon</a>。设计一个clash.service文件：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[Unit]
+Description=Clash daemon, A rule-based proxy in Go.
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/local/bin/clash -d /etc/clash
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div><p>放置或者链接到<code>/etc/systemd/system/clash.service</code>。</p>
+<p>相关命令：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl enable clash
+systemctl start clash
+systemctl stop clash
+systemctl status clash
+journalctl -xe
+service clash start 
+service clash stop 
+service clash restart
+service clash status 
+</code></pre></div><p>查看日志：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>journalctl -e -u clash.service
+</code></pre></div><p>如果想要将日志单独记录到文件，可以使用 systemd 的 StandardOutput 和 StandardError 将日志定向到文件中:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># Works only in systemd v240 and newer!
+StandardOutput=append:/var/log/clash/log.log
+StandardError=append:/var/log/clash/error.log
+</code></pre></div><blockquote>
+<p>参考<a href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=">https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=</a></p>
+</blockquote>
+<p>如果之前运行过clash，那么在<code>~/.config/clash</code>下会生成</p>
+<ul>
+<li>config.yaml</li>
+<li>Country.mmdb</li>
+</ul>
+<p>将这两个文件拷到目前配置目录，比如<code>/etc/clash</code>。</p>
+<h2 id=webui>WebUI<a class="anchor sf-hidden" aria-hidden=true href=#webui hidden>#</a></h2>
+<p>可以使用：</p>
+<ul>
+<li><a href=https://github.com/Dreamacro/clash-dashboard>https://github.com/Dreamacro/clash-dashboard</a></li>
+<li><a href=https://github.com/haishanh/yacd>https://github.com/haishanh/yacd</a></li>
+</ul>
+<p>需要在config.xml中设置external-ui到dashboard资源所在路径。</p>
+<h2 id=其他参考>其他参考<a class="anchor sf-hidden" aria-hidden=true href=#%E5%85%B6%E4%BB%96%E5%8F%82%E8%80%83 hidden>#</a></h2>
+<ul>
+<li><a href=https://lancellc.gitbook.io/clash/>https://lancellc.gitbook.io/clash/</a></li>
+<li><a href=https://github.com/Dreamacro/clash/wiki/configuration>https://github.com/Dreamacro/clash/wiki/configuration</a></li>
+<li><a href=https://zhuanlan.zhihu.com/p/366589407>如何在Linux中使用Clash（前提：在Windows中已经连接成功）——保姆级别教程</a>
+<ul>
+<li>此文将clash服务放置在<code>/usr/lib/systemd/system/clash.service</code></li>
+</ul>
+</li>
+<li><a href=https://einverne.github.io/post/2021/03/linux-use-clash.html>在 Linux 上使用 Clash 作代理</a></li>
+<li><a href=https://github.com/Sitoi/SystemdClash>https://github.com/Sitoi/SystemdClash</a></li>
+<li><a href=https://github.com/yuanlam/Clash-Linux>Clash-Linux-折腾笔记</a></li>
+<li><a href=https://akillcool.github.io/post/clash-with-auto-update-config/>Clash自动更新订阅配置</a></li>
+<li><a href=https://ghost.qinan.co/ubuntu-install-clash-yacd/>ubuntu安装clash+yacd-gui</a></li>
+<li><a href=https://github.com/SpongeNobody/Clashy>https://github.com/SpongeNobody/Clashy</a></li>
+<li><a href=https://github.com/haishanh/yacd>https://github.com/haishanh/yacd</a></li>
+</ul>
+<h2 id=名词解释>名词解释<a class="anchor sf-hidden" aria-hidden=true href=#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A hidden>#</a></h2>
+<h3 id=tuntap><a href=https://en.wikipedia.org/wiki/TUN/TAP>TUN/TAP</a><a class="anchor sf-hidden" aria-hidden=true href=#tuntap hidden>#</a></h3>
+<p>TUN，即netowrk TUNnel，层3的隧道。
+TAP，即network TAP吗，层2的隧道。</p>
+<p>（未完待续）</p>
+<h2 id=2021-07-09更新>2021-07-09更新<a class="anchor sf-hidden" aria-hidden=true href=#2021-07-09%E6%9B%B4%E6%96%B0 hidden>#</a></h2>
+<p>Clash的Web界面：</p>
+<ul>
+<li><a href=https://github.com/Dashboard2/Dashboard>https://github.com/Dashboard2/Dashboard</a></li>
+<li><a href=https://github.com/lzdnico/ClashWeb>https://github.com/lzdnico/ClashWeb</a></li>
+</ul>
+<p>（更新完）</p>
+</div>
+ <footer class=post-footer>
+ <ul class=post-tags>
+ <li><a href=https://marvinsblog.net/tags/clash/>Clash</a></li>
+ <li><a href=https://marvinsblog.net/tags/ubuntu-20.04/>Ubuntu 20.04</a></li>
+ </ul>
+ </footer>
+</article>
+ </main><footer class=footer>
+ <span>marvinsblog</span>
+ <span>·</span>
+ <span>Powered by <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a></span>
+ <span>·</span>
+ <span>Theme <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a></span>
+</footer>
+<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+ <button class=top-link id=top-link type=button accesskey=g style=visibility:visible;opacity:1>
+ <svg xmlns=http://www.w3.org/2000/svg viewBox="0 0 12 6" fill=currentColor>
+ <path d="M12 6H0l6-6z"></path>
+ </svg>
+ </button>
+</a>
+<tbdiv id=picinpicBtn class=sf-hidden></tbdiv><tbdiv id=playerControlBtn class=sf-hidden></tbdiv><tbdiv id=leftFullStackButton class=sf-hidden></tbdiv><tbdiv id=rightFullStackButton class=sf-hidden></tbdiv><grammarly-desktop-integration data-grammarly-shadow-root=true><template shadowmode=open><style class=sf-hidden>div{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}div:before{content:attr(data-content)}</style><div aria-label=grammarly-integration tabindex=-1 data-content='{"mode":"full","isActive":true,"isUserDisabled":false}'></div></template></grammarly-desktop-integration><div id=photoShowViewer class="sb_BingCA photoShow">
+ <div class=photoshow-viewer-shadow></div>
+ <div class="photoshow-img-wrapper sf-hidden">
+ 
+ 
+ </div>
+ <i class=photoshow-img-size></i>
+ </div><script data-template-shadow-root>(()=>{document.currentScript.remove();processNode(document);function processNode(node){node.querySelectorAll("template[shadowmode]").forEach(element=>{let shadowRoot = element.parentElement.shadowRoot;if (!shadowRoot) {try {shadowRoot=element.parentElement.attachShadow({mode:element.getAttribute("shadowmode"),delegatesFocus:Boolean(element.getAttribute("delegatesfocus"))});shadowRoot.innerHTML=element.innerHTML;element.remove()} catch (error) {} if (shadowRoot) {processNode(shadowRoot)}}})}})()</script>
